@@ -1,0 +1,24 @@
+.Save-button{
+    background-color: #00b4d8;
+    display: flex;
+    justify-content: center;
+    border-radius: 4rem;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    margin: 2rem;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.Save-button:hover{
+    width: 5rem;
+    height: 5rem;
+}
+
+.plus_Icon {
+    width: 2rem;
+    height: 2rem;
+    color: #fff;
+}

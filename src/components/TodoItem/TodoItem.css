@@ -1,0 +1,46 @@
+
+ul li{
+    list-style: none;
+}
+
+.checkItem {
+    width: 2rem;
+    height: auto;
+}
+
+.checkItem-Active path {
+    fill: var(--verde);
+}
+
+.todoCompleted {
+    text-decoration: line-through;
+}
+
+.item-window {
+    background-color: #fff;
+    box-shadow: 0px 0px 4rem 1rem #7a7878;
+    display: flex;
+    margin: 3rem 2rem;
+    padding: 2rem 2rem;
+    /* border: 2px solid #5a5757; */
+    justify-content: space-between;
+}
+
+.close-item {
+    color: #E74C3C;
+    position: relative;
+    width: 2rem;
+    height: auto;
+    top: -3rem;
+    right: -0.5rem;
+}
+
+.close-item path:hover{
+    fill: var(--rojo);
+    padding: 1rem;
+}
+
+.checkItem path:hover{
+    fill: var(--verde);
+    padding: 1rem;
+}
