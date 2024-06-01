@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import { TodoCounter } from './components/TodoCounter/TodoCounter'
 import { TodoSearch } from './components/TodoSearch/TodoSearch'
 import { TodoList } from './components/TodoList/TodoList'
@@ -7,27 +8,37 @@ import { CreateTodoButton } from './components/CreateTodoButton/CreateTodoButton
 import './App.css';
 
 
-let tareas = [
-  {tarea:'tarea 1', completado: true},
-  {tarea:'tarea 2', completado: false}
-]
-
-
 function App() {
+  //todo: Search State
+
+  const defaulTodos = [
+    {todo: 'tarea 1', completed: false},
+    {todo: 'tarea 2', completed: true}
+  ];
+
+  const [todos, setTodos] = React.useState(defaulTodos);
+  const [searchValue, setSearchValue] = React.useState('');
+
+  let totalTodos = todos.length;
+  let completedTodos = todos.filter(todos => todos.completed == true).length;
+
   return (
     <>
-      <TodoCounter completed={5} total={10} />
-      <TodoSearch />
+      <TodoCounter completed={completedTodos} total={totalTodos} />
+      <TodoSearch
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+      />
       
       <TodoList>
-        {tareas.map(items => (
-          <TodoItem key={items.tarea} tarea={items.tarea} completed={items.completado}/>
+        {todos.map(items => (
+          <TodoItem key={items.todo} todo={items.todo} completed={items.completed}/>
+          
         ))}
       </TodoList>
 
       <CreateTodoButton/>
 
-      <TodoModal/>
     </>
   );
 }

@@ -1,11 +1,11 @@
-.modal {
+/* .modal {
     display: flex;
     position: fixed;
     background-color: #fff;
     border: 2px solid #222;
     top: 40%;
     left: 0;
-}
+} */
 
 .hiden {
     display: none;
